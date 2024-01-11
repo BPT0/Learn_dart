@@ -6,7 +6,8 @@ String sayHello1({String name = 'anon', int age=0, String country='world'}){
 }
 
 // 아래와 같이 파라미터 앞에 required를 붙이면 
-// 변수를 항상 가져야만 한다는 걸 알게됨
+// 변수를 항상 가져야만 한다는 걸 
+// 컴파일 단계에서 알게됨
 String sayHello2({
   required String name, 
   required int age, 
@@ -22,5 +23,10 @@ void main(){
     name: 'kbs', 
     country: 'korea'
   );
-  sayHello1(); // 위와 같이 변수값을 입력하지 않을시 default 값 출력
+
+  sayHello2(
+    age: 25,
+    name: 'kbs', 
+    country: 'korea',
+  ); // 위와 같이 변수값을 입력하지 않을시 default 값 출력
 }
